@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Ultimate Conversion Tracking ===
 Contributors: ubazaar
 Donate link: https://www.ubazaar.co
 Tags: conversion tracking
