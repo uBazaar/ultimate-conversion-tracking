@@ -16,7 +16,9 @@ Conversion tracking is an essential measurement of website performance, helping 
 
 == Installation ==
 
-1. Upload `ultimate-conversion-tracking.php` to the `/wp-content/plugins/` directory
+1. Upload the `ultimate-conversion-tracking.zip` archive to the `/wp-content/plugins/` directory
+1. Unzip the archive.
+1. Change ownership of the directory (e.g. `chmod -R www-data: ultimate-conversion-tracking.zip`).
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
