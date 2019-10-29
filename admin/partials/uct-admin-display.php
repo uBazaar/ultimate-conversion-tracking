@@ -49,6 +49,8 @@ foreach($values as $key=>$value){
     $settings[$key] = $value;
 }
 
+file_put_content("/tmp/admin.txt",json_encode($settings));
+
 ?>
 
 <div class="form-group row">
