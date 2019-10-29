@@ -128,7 +128,7 @@ class Ultimate_Conversion_Tracking_Admin {
 		add_menu_page(
 			'Conversion Tracking',
 			'Conversion Tracking',
-			'conversion-tracking',
+			'manage_options',
 			$this->plugin_name,
 			array(
 				$this,
@@ -140,6 +140,10 @@ class Ultimate_Conversion_Tracking_Admin {
 
 	}
 
+	public function uct_admin_display() {
+		include_once( 'partials/uct-admin-display.php' );
+	}
+
 	public function uct_ajax_save_admin_settings(){
 
 		global $wpdb;
@@ -147,7 +151,7 @@ class Ultimate_Conversion_Tracking_Admin {
 		$data = $_POST;
 
 		foreach ($data as $key => $value) {
-			foreach ($tracking_types as $k => $type) {
+			foreach ($this->tracking_types as $k => $type) {
 				if($key == $type){
 					$results = $wpdb->get_results( "
 						SELECT id
