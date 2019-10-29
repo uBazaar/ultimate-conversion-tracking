@@ -22,7 +22,7 @@ global $wpdb;
 </div>
 
 <h1>
-  <div id="uct-admin-settings-form">
+  <div id="uct-admin-settings-form container">
 <?php
 /**
 *
@@ -51,9 +51,9 @@ foreach($values as $key=>$value){
 
 ?>
 
-<div class="form-group">
-  <label for="uct-linkedin-insight-tag">LinkedIn Insight Tag</label>
-  <input type="text" id="uct-linkedin-insight-tag" value="<?php echo $settings["uct-linkedin-insight-tag"] ?>">
+<div class="form-group row">
+  <div "col-xs-12 col-md-4"><label for="uct-linkedin-insight-tag">LinkedIn Insight Tag</label></div>
+  <div "col-xs-12 col-md-8"><input type="text" id="uct-linkedin-insight-tag" value="<?php echo $settings["uct-linkedin-insight-tag"] ?>"></div>
 </div>
 
 <?php
@@ -64,9 +64,9 @@ foreach($values as $key=>$value){
 **/
 ?>
 
-<div class="form-group">
-  <label for="uct-google-tracking-id">Google Analytics Tracking ID</label>
-  <input type="text" id="uct-google-tracking-id" value="<?php echo $settings["uct-google-tracking-id"] ?>">
+<div class="form-group row">
+  <div "col-xs-12 col-md-4"><label for="uct-google-tracking-id">Google Analytics Tracking ID</label></div>
+  <div "col-xs-12 col-md-8"><input type="text" id="uct-google-tracking-id" value="<?php echo $settings["uct-google-tracking-id"] ?>"></div>
 </div>
 
 <?php
@@ -77,9 +77,9 @@ foreach($values as $key=>$value){
 **/
 ?>
 
-<div class="form-group">
-  <label for="uct-facebook-pixel-id">Facebook Pixel ID</label>
-  <input type="text" id="uct-facebook-pixel-id" value="<?php echo $settings["uct-facebook-pixel-id"] ?>">
+<div class="form-group row">
+  <div "col-xs-12 col-md-4"><label for="uct-facebook-pixel-id">Facebook Pixel ID</label></div>
+  <div "col-xs-12 col-md-8"><input type="text" id="uct-facebook-pixel-id" value="<?php echo $settings["uct-facebook-pixel-id"] ?>"></div>
 </div>
 
 <?php
@@ -90,9 +90,11 @@ foreach($values as $key=>$value){
 **/
 ?>
 
-<div class="form-group">
-  <label for="uct-twitter-pixel-id">Twitter Pixel ID</label>
-  <input type="text" id="uct-twitter-pixel-id" value="<?php echo $settings["uct-twitter-pixel-id"] ?>" readonly>
+<!--<div class="form-group row">
+  <div "col-xs-12 col-md-4"><label for="uct-twitter-pixel-id">Twitter Pixel ID</label></div>
+  <div "col-xs-12 col-md-8"><input type="text" id="uct-twitter-pixel-id" value="<?php echo $settings["uct-twitter-pixel-id"] ?>" readonly></div>
+</div>-->
+
 </div>
 
 <?php
