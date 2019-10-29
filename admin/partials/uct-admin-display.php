@@ -21,7 +21,7 @@ global $wpdb;
 
 </div>
 
-<h1>
+<h1>Ultimate Conversion Tracking</h1>
   <div id="uct-admin-settings-form container">
 <?php
 /**
