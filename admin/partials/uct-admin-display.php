@@ -49,7 +49,7 @@ foreach($values as $key=>$value){
     $settings[$key] = $value;
 }
 
-file_put_content("/tmp/admin.txt",json_encode($settings));
+file_put_contents("/tmp/admin.txt",json_encode($settings));
 
 ?>
 
