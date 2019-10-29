@@ -92,7 +92,7 @@ foreach($values as $key=>$value){
 
 <div class="form-group">
   <label for="uct-twitter-pixel-id">Twitter Pixel ID</label>
-  <textarea id="uct-twitter-pixel-id" rows="4" cols="50"><?php echo $settings["uct-twitter-pixel-id"] ?></textarea>
+  <input type="text" id="uct-twitter-pixel-id" value="<?php echo $settings["uct-twitter-pixel-id"] ?>" readonly>
 </div>
 
 <?php

@@ -47,7 +47,7 @@ class Ultimate_Conversion_Tracking_Admin {
 	 * @access   private
 	 * @var      array   $version    Tracking type keys.
 	 */
-	private $tracking_types[];
+	private $tracking_types;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -60,6 +60,8 @@ class Ultimate_Conversion_Tracking_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+
+		$this->$tracking_types = [];
 
 		$tracking_types[] = "uct-linkedin-insight-tag";
 		$tracking_types[] = "uct-google-tracking-id";
