@@ -47,7 +47,7 @@ class Ultimate_Conversion_Tracking_Admin {
 	 * @access   private
 	 * @var      array   $version    Tracking type keys.
 	 */
-	private $tracking_types;
+	public $tracking_types;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -61,12 +61,11 @@ class Ultimate_Conversion_Tracking_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		$this->$tracking_types = [];
-
-		$tracking_types[] = "uct-linkedin-insight-tag";
-		$tracking_types[] = "uct-google-tracking-id";
-		$tracking_types[] = "uct-facebook-pixel-id";
-		$tracking_types[] = "uct-twitter-pixel-id";
+		$this->tracking_types = array();
+		array_push($this->tracking_types,"uct-linkedin-insight-tag");
+		array_push($this->tracking_types,"uct-google-tracking-id");
+		array_push($this->tracking_types,"uct-facebook-pixel-id");
+		array_push($this->tracking_types,"uct-twitter-pixel-id");
 
 	}
 
@@ -133,9 +132,10 @@ class Ultimate_Conversion_Tracking_Admin {
 			$this->plugin_name,
 			array(
 				$this,
-				'ultimate_conversion_tracking_admin_display'
+				'uct_admin_display'
 			),
 			'dashicons-welcome-write-blog',
+			5
 		);
 
 	}
