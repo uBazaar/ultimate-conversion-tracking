@@ -47,7 +47,7 @@ class Ultimate_Conversion_Tracking_Admin {
 	 * @access   private
 	 * @var      array   $version    Tracking type keys.
 	 */
-	private $tracking_types[];
+	public $tracking_types;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -61,10 +61,11 @@ class Ultimate_Conversion_Tracking_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		$tracking_types[] = "uct-linkedin-insight-tag";
-		$tracking_types[] = "uct-google-tracking-id";
-		$tracking_types[] = "uct-facebook-pixel-id";
-		$tracking_types[] = "uct-twitter-pixel-id";
+		$this->tracking_types = array();
+		array_push($this->tracking_types,"uct-linkedin-insight-tag");
+		array_push($this->tracking_types,"uct-google-tracking-id");
+		array_push($this->tracking_types,"uct-facebook-pixel-id");
+		array_push($this->tracking_types,"uct-twitter-pixel-id");
 
 	}
 
@@ -127,15 +128,20 @@ class Ultimate_Conversion_Tracking_Admin {
 		add_menu_page(
 			'Conversion Tracking',
 			'Conversion Tracking',
-			'conversion-tracking',
+			'manage_options',
 			$this->plugin_name,
 			array(
 				$this,
-				'ultimate_conversion_tracking_admin_display'
+				'uct_admin_display'
 			),
 			'dashicons-welcome-write-blog',
+			5
 		);
 
+	}
+
+	public function uct_admin_display() {
+		include_once( 'partials/uct-admin-display.php' );
 	}
 
 	public function uct_ajax_save_admin_settings(){
@@ -145,7 +151,7 @@ class Ultimate_Conversion_Tracking_Admin {
 		$data = $_POST;
 
 		foreach ($data as $key => $value) {
-			foreach ($tracking_types as $k => $type) {
+			foreach ($this->tracking_types as $k => $type) {
 				if($key == $type){
 					$results = $wpdb->get_results( "
 						SELECT id
