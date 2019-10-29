@@ -33,7 +33,7 @@ global $wpdb;
 
 <?php
 $query = "
-    SELECT value
+    SELECT property,value
     FROM wp_uct_admin_settings
     WHERE property = 'uct-linkedin-insight-tag'
     OR property = 'uct-google-tracking-id'
@@ -46,10 +46,8 @@ $values = $wpdb->get_results($query, OBJECT);
 $settings = array();
 
 foreach($values as $key=>$value){
-    $settings[$key] = $value;
+    $settings[$value->property] = $value->value;
 }
-
-file_put_contents("/tmp/admin.txt",json_encode($settings));
 
 ?>
 
